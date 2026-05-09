@@ -2,7 +2,7 @@ export function AuthShell({ title, subtitle, children }) {
   return (
     <main className="auth-page">
       <section className="auth-brand">
-        <img src="/event-marketing.svg" alt="Event marketing illustration" />
+        <img src="/Lead_Management/event-marketing.svg" alt="Event marketing illustration" />
       </section>
       <section className="auth-panel">
         <div>
