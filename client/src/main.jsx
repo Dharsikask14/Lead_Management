@@ -7,7 +7,8 @@ import "./styles.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* Add the basename prop here */}
+    <BrowserRouter basename="/Lead_Management">
       <AuthProvider>
         <App />
       </AuthProvider>

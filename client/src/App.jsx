@@ -7,12 +7,16 @@ import { Login } from "./pages/Login.jsx";
 import { Register } from "./pages/Register.jsx";
 
 export function App() {
+ 
+  const base = "/Lead_Management";
+
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path={`${base}/login`} element={<Login />} />
+      <Route path={`${base}/register`} element={<Register />} />
+      
       <Route
-        path="/"
+        path={`${base}/`}
         element={
           <ProtectedRoute>
             <Dashboard />
@@ -20,7 +24,7 @@ export function App() {
         }
       />
       <Route
-        path="/leads"
+        path={`${base}/leads`}
         element={
           <ProtectedRoute>
             <Leads />
@@ -28,7 +32,7 @@ export function App() {
         }
       />
       <Route
-        path="/leads/new"
+        path={`${base}/leads/new`}
         element={
           <ProtectedRoute>
             <AddLead />
@@ -36,14 +40,16 @@ export function App() {
         }
       />
       <Route
-        path="/leads/:id/edit"
+        path={`${base}/leads/:id/edit`}
         element={
           <ProtectedRoute>
             <AddLead />
           </ProtectedRoute>
         }
       />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      
+      {/* Redirect any unknown path back to the dashboard root */}
+      <Route path="*" element={<Navigate to={`${base}/`} replace />} />
     </Routes>
   );
 }
