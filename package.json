@@ -15,7 +15,7 @@
     "dev:client": "npm run dev --workspace client",
     "build": "npm run build --workspace client",
     "start": "npm start --workspace server",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build --workspace client",
     "deploy": "gh-pages -d client/dist",
     "lint": "npm run lint --workspace server && npm run lint --workspace client"
   },
